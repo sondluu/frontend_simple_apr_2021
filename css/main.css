@@ -1,0 +1,295 @@
+:root {
+  --leading: 2em;
+}
+
+body {
+  font-family: 'Arial';
+  margin: 0;
+}
+
+.hero-bg {
+  background: url("../images/luigi-pozzoli-healthyfood.jpg");
+  background-position: 30% 30%;
+  color: white;
+  text-align: center;
+  padding-bottom: 4em;
+}
+
+header {
+  padding: 1em 0;
+}
+
+.hero-bg a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+section {
+  margin: 0 1em;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin: 2em 0 1.2em;
+}
+
+h1 span {
+  text-transform: uppercase;
+  display: block;
+  font-size: 1.4rem;
+  position: relative;
+  z-index: 1;
+}
+
+h1 span::before {
+  content: ' ';
+  position: absolute;
+  width: 3em;
+  background: blue;
+  height: .3em;
+  bottom: 0;
+  z-index: -1;
+  margin-left: -.3em;
+}
+
+.hero-bg p {
+  font-weight: bold;
+  margin: 0 1em 3em;
+}
+
+.form-container {
+  background-color: white;
+  margin: 2em -1em 0;
+  padding: 2em;
+}
+
+label {
+  color: black;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 1em;
+  font-size: 1.2rem;
+}
+
+input[type=text] {
+  border: 1px solid gray;
+  width: 100%;
+  padding: 1em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: .4em;
+  margin-top: 1.2em;
+}
+
+.form-container p {
+  color: gray;
+  margin-bottom: 1.5em;
+  font-weight: normal;
+  font-size: .9em;
+  margin-top: .3em;
+}
+
+input[type=button] {
+  background-color: orangered;
+  border: none;
+  width: 100%;
+  color: white;
+  font-weight: bold;
+  padding: 1em 0;
+  border-radius: .3em;
+  cursor: pointer;
+}
+
+input[type=button]:hover {
+  background-color: #d8d801;
+}
+
+.authentic {
+  margin: 0;
+}
+
+.right-col {
+  text-align: center;
+  margin: 3em 1em;
+}
+
+h2 {
+  text-transform: uppercase;
+  position: relative;
+}
+
+img {
+  width: 100%;
+}
+
+img {
+  width: 100%;
+}
+
+h2::before {
+  content: ' ';
+  position: absolute;
+  width: 7em;
+  background: green;
+  height: .3em;
+  bottom: 0;
+  z-index: -1;
+  margin-left: -.3em;
+}
+
+p {
+  line-height: var(--leading);
+}
+
+.overlay {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 1;
+  place-content: center;
+  color: white;
+  display: none;
+  opacity: 0;
+}
+
+.animate-overlay {
+  -webkit-animation: overlay 3s forwards;
+          animation: overlay 3s forwards;
+}
+
+@media (min-width: 730px) {
+  section {
+    margin: 0 4em;
+  }
+  .form-container {
+    margin: 2em -4em 0;
+  }
+}
+
+@media (min-width: 930px) {
+  .hero-bg {
+    text-align: left;
+  }
+  .hero-bg p {
+    font-weight: 0 0 3em;
+  }
+  .hero-bg section {
+    width: 65%;
+  }
+  .form-container {
+    margin: 2em 0 0;
+    padding: 2em;
+    border-radius: .3em;
+    -webkit-box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
+            box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
+  }
+  form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .form-left {
+    width: 70%;
+  }
+  label {
+    margin: 0;
+  }
+  input[type="button"] {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    font-size: 1.1em;
+    margin-left: 1em;
+    margin-top: 2.2em;
+    padding: .7em 0;
+    width: 30%;
+  }
+  .hero-bg p {
+    margin-bottom: 0;
+  }
+  section.authentic {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (50%)[2];
+        grid-template-columns: repeat(2, 50%);
+        grid-template-areas: "bowl content";
+  }
+  .right-col {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: content;
+    padding: 0 10%;
+    text-align: left;
+  }
+  img {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: bowl;
+  }
+  h2 {
+    margin: 0;
+  }
+}
+
+.top {
+  -webkit-animation: fadeIn 2s forwards;
+          animation: fadeIn 2s forwards;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(-2em);
+            transform: translateY(-2em);
+  }
+  to {
+    opacity: 1;
+    transfom: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(-2em);
+            transform: translateY(-2em);
+  }
+  to {
+    opacity: 1;
+    transfom: translateY(0);
+  }
+}
+
+@-webkit-keyframes overlay {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes overlay {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+/*# sourceMappingURL=main.css.map */
